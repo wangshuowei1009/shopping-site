@@ -1,0 +1,323 @@
+/* src/components/ShoppingCart.css */
+.shopping-cart-container {
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", Meiryo, "メイリオ", sans-serif;
+}
+
+.cart-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.empty-cart-message {
+    border: 1px solid #eee;
+    padding: 40px 20px;
+    margin: 20px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.cart-layout {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cart-items-container {
+    flex: 3;
+    min-width: 300px;
+}
+
+.cart-summary {
+    flex: 1;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+
+    padding: 20px;
+}
+
+.summary-box {
+    text-align: center;
+}
+
+.cart-item {
+    display: flex;
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.item-image {
+    width: 200px;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #eee;
+}
+
+.item-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-name {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.item-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+.quantity-selector input {
+    width: 60px;
+    height: 35px;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+}
+
+.quantity-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.quantity-buttons button {
+    background: #f0f0f0;
+    border: none;
+    border-left: 1px solid #ccc;
+    width: 24px;
+    height: 17.5px;
+    font-size: 12px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.quantity-buttons button:first-child {
+    border-bottom: 1px solid #ccc;
+}
+
+.recalculate-btn {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.remove-btn {
+    background-color: transparent;
+    border: none;
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.summary-box {
+    background-color: #fff8e1;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #c62828;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.order-summary {
+    text-align: center;
+}
+
+.summary-total {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.item-count {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.continue-shopping {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.continue-shopping a {
+    color: #333;
+    text-decoration: none;
+}
+
+.continue-shopping a:hover {
+    text-decoration: underline;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* 使用整个视窗的高度 */
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 8px solid #f3f3f3;
+    /* 浅色边框 */
+    border-top: 8px solid #3498db;
+    /* 突出显示的颜色 */
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    margin-bottom: 20px;
+    /* 文字上方的间隔 */
+}
+
+.loading-text {
+    font-size: 24px;
+    /* 较大的字体 */
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .item-image,
+    .item-details {
+        width: 50%;
+    }
+
+    /* 显示图片 */
+    .item-image {
+        display: block;
+    }
+
+    /* 右侧内容整体居中排列 */
+    .item-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 数量按钮和删除按钮容器居中排列 */
+    .item-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        /* 可以根据需要调整间隔 */
+    }
+
+    /* 数量选择区中调整按钮的排列，如果需要 */
+    .quantity-selector {
+        display: flex;
+        align-items: center;
+    }
+
+    .quantity-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        /* 调整按钮之间的间隔 */
+    }
+}
+
+/* 如果价格不需要和名称挤在同一行，可以考虑隐藏或调整位置 */
+.item-price {
+    /* 如果希望在移动端隐藏价格，可以取消注释下一行 */
+    /* display: none; */
+    /* 或者将价格移到其他位置 */
+    margin-right: 10px;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* 数量选择和删除按钮之间的间隔 */
+}
+
+/* 如有需要，为数量选择区做适当调整 */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+
+/* ShoppingCart.css 中的示例样式 */
+.continue-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #dc3545;
+    /* 红色背景 */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.continue-btn:hover {
+    background-color: #c82333;
+}

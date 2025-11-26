@@ -1,0 +1,189 @@
+/* 页面容器设置：最大宽度80%，居中显示 */
+.admin-container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    /* 整个页面内容居中 */
+}
+
+/* 顶部按钮 */
+
+
+/* 商品列表采用 CSS Grid 布局：一行排列 5 个，宽度自适应 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+/* ProductCard 样式 */
+.product-card {
+    position: relative;
+    /* 用于状态栏定位 */
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 360px;
+    /* 固定卡片最小高度，防止加载时高度波动 */
+    text-align: center;
+    /* 卡片内文本居中 */
+}
+
+/* 状态栏：卡片右上角 */
+.status-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #3498db;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* 主图片：80%宽度并居中显示，设置固定高度 */
+.product-card img.main-image {
+    width: 80%;
+    height: auto;
+    max-height: 180px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+    object-fit: contain;
+    /* 保持完整显示，不裁剪 */
+    object-position: center;
+    /* 居中显示 */
+}
+
+/* 商品详情 */
+.product-details {
+    margin-top: 12px;
+}
+
+.product-details h4 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+}
+
+.product-details p {
+    color: #555;
+    font-size: 14px;
+    margin: 0 0 8px 0;
+}
+
+.product-details .price {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+}
+
+/* 图片集 */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.gallery img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* 上传时间 */
+.product-card small.upload-time {
+    margin-top: 8px;
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* 按钮组 */
+.button-group {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 按钮风格 */
+.button-group button {
+    padding: 12px 16px;
+    /* 按钮更大 */
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.button-delete {
+    background-color: #e74c3c;
+}
+
+.button-toggle {
+    background-color: #f1c40f;
+}
+
+.button-toggle.inactive {
+    background-color: #27ae60;
+}
+
+
+/* 管理页面顶部按钮容器 */
+.header-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+/* 按钮通用样式 */
+.header-buttons button {
+    background-color: #4a90e2;
+    /* 温和的蓝色 */
+    color: #fff;
+    border: none;
+    padding: 16px 32px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* 鼠标悬停时 */
+.header-buttons button:hover {
+    background-color: #357ab8;
+    transform: scale(1.05);
+}
+
+/* 按下效果 */
+.header-buttons button:active {
+    background-color: #2d6899;
+}
+
+/* 分别设置上传和订单按钮的颜色 */
+.upload-button {
+    background-color: #3cb371;
+    /* 温柔的绿色 */
+}
+
+.upload-button:hover {
+    background-color: #2e8b57;
+}
+
+.orders-button {
+    background-color: #ff8c00;
+    /* 柔和的橙色 */
+}
+
+.orders-button:hover {
+    background-color: #e07b00;
+}

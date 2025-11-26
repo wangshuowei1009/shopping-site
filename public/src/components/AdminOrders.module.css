@@ -1,0 +1,121 @@
+/* 全局样式区域 */
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* 为支付状态新增样式，这里设置为绿色加粗 */
+.paidStatus {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* 表格和按钮样式 */
+.tableContainer {
+    overflow-x: auto;
+    margin-bottom: 10px;
+}
+
+.table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f5f5f5;
+}
+
+.table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.inputTracking {
+    width: 150px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btnShip {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btnDelete {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* 分页样式 */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 6px 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 小屏幕响应式 */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .table th,
+    .table td {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+
+    /* 这里可以不用再重复定义 .paidStatus，
+       如果你希望在小屏幕上额外强调，可以加上 !important */
+    /* .paidStatus {
+         color: #28a745 !important;
+         font-weight: bold !important;
+     } */
+
+    .inputTracking {
+        width: 100px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .pagination button {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+}

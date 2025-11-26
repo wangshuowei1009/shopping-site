@@ -1,0 +1,225 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* タイトルを中央揃え */
+.container h2 {
+    text-align: center;
+}
+
+.orderContainer {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.productList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.productItem {
+    display: flex;
+    align-items: center;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+.productImage {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.productInfo p {
+    margin: 5px 0;
+}
+
+/* ボタンコンテナ */
+.paymentButtons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* ボタンは横並び、各ボタンは均等の幅 */
+.paymentButton {
+    flex: 1;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.paymentButton:hover {
+    background-color: #c9302c;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modalContent {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+}
+
+.modalClose {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+/* 新增支付成功弹窗的样式 */
+.successModalContent {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.successModalContent h2.successTitle {
+    font-size: 2rem;
+    margin: 1rem 0 0.5rem;
+    color: #333;
+}
+
+.successModalContent p.successMessage {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.successModalContent .successIcon {
+    margin-bottom: 1rem;
+}
+
+.returnHomeButton {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    background-color: #c9302c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.returnHomeButton:hover {
+    background-color: #c9302c;
+}
+
+/* 可对 modalOverlay 进行微调，使弹窗在支付成功时更加突出 */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    margin-bottom: 20px;
+}
+
+.loading-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* 限制二维码弹窗在手机端的宽度和内边距 */
+    .modalContent {
+        width: 90%;
+        max-width: 280px;
+        /* 限制弹窗宽度 */
+        padding: 1rem;
+        /* 内边距缩小 */
+    }
+
+    .successModalContent {
+        max-width: 70%;
+        /* 限制弹窗宽度为屏幕宽度的90% */
+        padding: 1.5rem;
+        /* 内边距缩小，使弹窗整体更紧凑 */
+    }
+
+    /* 可选：缩小标题和信息的文字大小 */
+    .successModalContent h2.successTitle {
+        font-size: 1.5rem;
+        margin: 0.75rem 0 0.5rem;
+    }
+
+    .successModalContent p.successMessage {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* 可选：调整返回首页按钮的尺寸 */
+    .returnHomeButton {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,125 @@
+/* src/components/EmailModal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-container h2 {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+.modal-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.modal-form {
+    margin-bottom: 1.5rem;
+}
+
+.modal-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.modal-form input {
+    width: 80%;
+    /* 改为较窄的宽度 */
+    display: block;
+    /* 让 input 成为块级元素 */
+    margin: 0 auto 1rem auto;
+    /* 上下外边距分别为 0 和 1rem，左右自动 */
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.modal-form input:focus {
+    border-color: #007bff;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.modal-btn {
+    flex: 1;
+    padding: 0.75rem;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-btn.primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.modal-btn.primary:hover {
+    background-color: #0069d9;
+    transform: translateY(-2px);
+}
+
+.modal-btn.secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.modal-btn.secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+.modal-extra {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.link-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    font-size: 0.9rem;
+}

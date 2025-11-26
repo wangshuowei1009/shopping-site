@@ -1,0 +1,212 @@
+.detail-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.detail-modal-container {
+    background: #fff;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* 关闭按钮：位于右上角 */
+.detail-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* 图片轮播区域 */
+.detail-modal-image {
+    flex: 0 0 400px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.image-wrapper {
+    width: calc(100% - 40px);
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* 左右切换箭头 */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.slider-arrow:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.slider-arrow-left {
+    left: 10px;
+}
+
+.slider-arrow-right {
+    right: 10px;
+}
+
+/* 右侧文字内容区域 */
+.detail-modal-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detail-modal-title {
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.detail-modal-content p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* 购物车按钮样式 */
+.detail-modal-cart-btn {
+    margin-top: 20px;
+    align-self: center;
+    padding: 0.7rem 1.3rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #e74c3c;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-modal-cart-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 加载样式 */
+.detail-modal-loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    text-align: center;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.loading-text {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 定义旋转动画 */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 小屏幕响应式 */
+@media (max-width: 600px) {
+    .detail-modal-overlay {
+        padding-top: 10px;
+    }
+
+    .detail-modal-container {
+        flex-direction: column;
+        overflow: visible;
+        max-width: 90%;
+        border-radius: 8px;
+    }
+
+    .detail-modal-image {
+        width: 100%;
+        height: 150px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .image-wrapper {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .detail-modal-content {
+        padding: 10px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .detail-modal-close {
+        top: 10px;
+        right: 10px;
+        z-index: 1100;
+    }
+}

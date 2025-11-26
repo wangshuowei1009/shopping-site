@@ -1,0 +1,211 @@
+/* OrdersPage.css */
+
+/* 整体容器 */
+.orders-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 标题 */
+.orders-header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+/* 消息提示 */
+.message {
+    text-align: center;
+    margin-bottom: 20px;
+    color: red;
+}
+
+/* 无订单提示 */
+.no-orders {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+}
+
+/* 订单卡片列表布局 */
+.orders-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* 单个订单卡片 */
+.order-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 卡片头部 */
+.card-header {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* 卡片主体 */
+.card-body {
+    padding: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* 卡片底部 */
+.card-footer {
+    background-color: #fafafa;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #555;
+}
+
+.card-footer h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* 商品列表：横向滚动 */
+.product-list {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+/* 每个商品项 */
+.product-item {
+    min-width: 150px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 5px;
+    background: #fff;
+    flex-shrink: 0;
+}
+
+/* 商品图片 */
+.product-image {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+/* 商品信息 */
+.product-info {
+    font-size: 12px;
+    color: #555;
+}
+
+/* 订单操作区域 */
+.card-actions {
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* 支付按钮 */
+.pay-button {
+    padding: 8px 16px;
+    background: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pay-button:hover {
+    background: #0056b3;
+}
+
+/* 已支付状态下的支付按钮 */
+.pay-button.paid {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* 取消订单按钮 */
+.cancel-button {
+    padding: 8px 16px;
+    background: #dc3545;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cancel-button:hover {
+    background: #b02a37;
+}
+
+/* 禁用状态下取消订单按钮变灰 */
+.cancel-button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* OrdersPage.css */
+.successButtons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* 按钮之间的间距 */
+    margin-top: 20px;
+}
+
+.successModalButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: #dc3545;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.confirmButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* 每个确认按钮的样式 */
+.confirmButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e74c3c;
+    /* 主按钮颜色 */
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 鼠标悬停确认按钮时的效果 */
+.confirmButton:hover {
+    background-color: #c0392b;
+}
